@@ -7,6 +7,8 @@ TagManager:
   - HitDetector
   - Floor
   - PowerUp
+  - ParedIzquierda
+  - ParedDerecha
   layers:
   - Default
   - TransparentFX

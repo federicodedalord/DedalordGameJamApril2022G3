@@ -655,7 +655,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529c73d000311c94abf7951256fb46f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: 0
   _rb2d: {fileID: 1030695441}
+  _jumpForce: 0
+  _horizontalSpeed: 10
+  _extraJumpDistance: 0
 --- !u!212 &1030695444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -871,7 +875,6 @@ MonoBehaviour:
   terrains:
   - {fileID: 0}
   spawnPos: []
-  timeToSpawn: 10
 --- !u!4 &1408529769
 Transform:
   m_ObjectHideFlags: 0
@@ -917,6 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1030695443}
+  SustainSlider: {fileID: 0}
 --- !u!4 &1408782526
 Transform:
   m_ObjectHideFlags: 0

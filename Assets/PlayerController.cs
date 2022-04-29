@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     private bool StopJump;
     private float _xInput;
 
+    private bool TouchingLeftWall;
+    private bool TouchingRightWall;
+
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _horizontalSpeed;
     [SerializeField] private float _extraJumpDistance;
@@ -64,6 +67,46 @@ public class PlayerController : MonoBehaviour
         {
             SustainProgress += collision.gameObject.GetComponent<PowerUp>().Sustain;
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("ParedIzquierda"))
+        {
+            TouchingLeftWall = true;
+        }
+        if (collision.gameObject.CompareTag("ParedDerecha"))
+        {
+            TouchingRightWall = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("ParedIzquierda"))
+        {
+
+            TouchingLeftWall = false;
+        }
+        if (collision.gameObject.CompareTag("ParedDerecha"))
+        {
+            TouchingRightWall = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("ParedIzquierda"))
+        {
+            if (TouchingLeftWall == false)
+            {
+                TouchingLeftWall = true;
+            }
+        }
+        if (collision.gameObject.CompareTag("ParedDerecha"))
+        {
+            if (TouchingRightWall == false)
+            {
+                TouchingRightWall = true;
+            }
         }
     }
 
@@ -131,6 +174,17 @@ public class PlayerController : MonoBehaviour
         _rb2d.isKinematic = true;
 
         _xInput = Input.GetAxis("Horizontal");
+
+        if (TouchingLeftWall && _xInput < 0)
+        {
+            _xInput = 1;
+        }
+
+        if (TouchingRightWall && _xInput > 0)
+        {
+            _xInput = -1;
+        }
+
         _rb2d.velocity = Vector2.right * _xInput * _horizontalSpeed;
     }
 }
