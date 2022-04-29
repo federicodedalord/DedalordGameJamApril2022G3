@@ -65,6 +65,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ReloadScene() { 
+        SceneManager.LoadScene(System.Enum.GetName(typeof(Stages), stage));
+    }
+
     public void Stage1()
     {
         if (SustainSlider.value >= SustainSlider.maxValue)
@@ -79,5 +83,7 @@ public class GameManager : MonoBehaviour
         playerController.Movement = PlayerController.MovementType.Sliding;
         stage = Stages.Stage2;
     }
+
+
 
 }

@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("HitDetector"))
         {
-            
+            GameManager.Instance.ReloadScene();
         }
     }
 
