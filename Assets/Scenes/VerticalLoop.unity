@@ -425,9 +425,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 3578468456470322854, guid: ff9dd5caf383b7e42a101a32a590a6dd, type: 3}
+      propertyPath: terrainTag
+      value: Background
+      objectReference: {fileID: 0}
     - target: {fileID: 5159269669697479557, guid: ff9dd5caf383b7e42a101a32a590a6dd, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5159269669697479557, guid: ff9dd5caf383b7e42a101a32a590a6dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -584,7 +588,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1030695440
 GameObject:
@@ -655,9 +659,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529c73d000311c94abf7951256fb46f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: 0
   _rb2d: {fileID: 1030695441}
   _jumpForce: 0
-  _extraJump: 0
+  _horizontalSpeed: 0
+  _extraJumpDistance: 0
+  CanPlay: 1
 --- !u!212 &1030695444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -838,54 +845,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1408529767
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1408529769}
-  - component: {fileID: 1408529768}
-  m_Layer: 0
-  m_Name: TerrainSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1408529768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408529767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5370322834285ea4fbc0a0bbc2f405f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  terrainParent: {fileID: 0}
-  terrains:
-  - {fileID: 0}
-  spawnPos: []
---- !u!4 &1408529769
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408529767}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2045072, y: 10.592215, z: 0.124364346}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1408782524
@@ -917,6 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5d0f50bb4e488448f9b5e3b722408d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage: 0
   playerController: {fileID: 1030695443}
   SustainSlider: {fileID: 0}
 --- !u!4 &1408782526
@@ -1127,7 +1087,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1532692421140509148, guid: 1966609f8d014ee4081728aafb28f4d7, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1532692421140509148, guid: 1966609f8d014ee4081728aafb28f4d7, type: 3}
       propertyPath: m_LocalPosition.x
