@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &90349534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 90349535}
+  m_Layer: 0
+  m_Name: TerrainFather
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &90349535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90349534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &336722928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -596,11 +627,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1777588445 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1122518281236262021, guid: ff9dd5caf383b7e42a101a32a590a6dd, type: 3}
-  m_PrefabInstance: {fileID: 2032330617}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2032330617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -622,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159269669697479557, guid: ff9dd5caf383b7e42a101a32a590a6dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 5159269669697479557, guid: ff9dd5caf383b7e42a101a32a590a6dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -720,7 +746,7 @@ PrefabInstance:
     - target: {fileID: 1839158803530819865, guid: 1966609f8d014ee4081728aafb28f4d7, type: 3}
       propertyPath: terrainParent
       value: 
-      objectReference: {fileID: 1777588445}
+      objectReference: {fileID: 90349534}
     - target: {fileID: 1839158803530819865, guid: 1966609f8d014ee4081728aafb28f4d7, type: 3}
       propertyPath: spawnPos.Array.size
       value: 2
@@ -739,11 +765,11 @@ PrefabInstance:
       objectReference: {fileID: 857516091410165621, guid: 43540a6d12489f24a9a151f2d96d9bfc, type: 3}
     - target: {fileID: 1839158803530819865, guid: 1966609f8d014ee4081728aafb28f4d7, type: 3}
       propertyPath: spawnPos.Array.data[0].x
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1839158803530819865, guid: 1966609f8d014ee4081728aafb28f4d7, type: 3}
       propertyPath: spawnPos.Array.data[1].x
-      value: 0
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 1839158803530819865, guid: 1966609f8d014ee4081728aafb28f4d7, type: 3}
       propertyPath: spawnPos.Array.data[1].y
