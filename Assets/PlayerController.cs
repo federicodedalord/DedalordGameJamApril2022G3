@@ -43,12 +43,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(0, 20, 200, 40), "CanJump: " + CanJump);
-        GUI.Label(new Rect(0, 40, 200, 40), "Horizontal Speed: " + _xInput);
-        GUI.Label(new Rect(0, 60, 200, 40), "SpaceWithGround: " + SpaceWithGround);
-        GUI.Label(new Rect(0, 80, 200, 40), "IsGrounded: " + IsGrounded);
-        GUI.Label(new Rect(0, 100, 200, 40), "OnSpace: " + OnSpace);
-        GUI.Label(new Rect(0, 120, 200, 40), "StopJump: " + StopJump);
+        //GUI.Label(new Rect(0, 20, 200, 40), "CanJump: " + CanJump);
+        //GUI.Label(new Rect(0, 40, 200, 40), "Horizontal Speed: " + _xInput);
+        //GUI.Label(new Rect(0, 60, 200, 40), "SpaceWithGround: " + SpaceWithGround);
+        //GUI.Label(new Rect(0, 80, 200, 40), "IsGrounded: " + IsGrounded);
+        //GUI.Label(new Rect(0, 100, 200, 40), "OnSpace: " + OnSpace);
+        //GUI.Label(new Rect(0, 120, 200, 40), "StopJump: " + StopJump);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
