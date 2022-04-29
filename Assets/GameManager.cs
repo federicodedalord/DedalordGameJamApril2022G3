@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public PlayerController playerController;
     public Slider SustainSlider;
 
+    public List<Sprite> StagesSprites;
+    public int currentStage;
+
 
     private void Awake()
     {
@@ -34,6 +37,28 @@ public class GameManager : MonoBehaviour
 
         stage = Stages.Stage1;
         DontDestroyOnLoad(gameObject);
+        var spriteRenderer = playerController.GetComponent<SpriteRenderer>();
+
+        switch (currentStage)
+        {
+            case 0:
+                spriteRenderer.sprite = StagesSprites[0];
+                break;
+            case 1:
+                spriteRenderer.sprite = StagesSprites[1];
+                break;
+            case 2:
+                spriteRenderer.sprite = StagesSprites[2];
+                break;
+            case 3:
+                spriteRenderer.sprite = StagesSprites[3];
+                break;
+            case 4:
+                spriteRenderer.sprite = StagesSprites[4];
+                break;
+            default:
+                break;
+        }
     }
 
     private void Update()
@@ -82,6 +107,36 @@ public class GameManager : MonoBehaviour
     {
         playerController.Movement = PlayerController.MovementType.Sliding;
         stage = Stages.Stage2;
+
+
+        if (SustainSlider.value >= SustainSlider.maxValue)
+        {
+            currentStage++;
+            SustainSlider.value = 0;
+
+            var spriteRenderer = playerController.GetComponent<SpriteRenderer>();
+            switch (currentStage)
+            {
+                case 0:
+                    spriteRenderer.sprite = StagesSprites[0];
+                    break;
+                case 1:
+                    spriteRenderer.sprite = StagesSprites[1];
+                    break;
+                case 2:
+                    spriteRenderer.sprite = StagesSprites[2];
+                    break;
+                case 3:
+                    spriteRenderer.sprite = StagesSprites[3];
+                    break;
+                case 4:
+                    spriteRenderer.sprite = StagesSprites[4];
+                    break;
+                default:
+                    spriteRenderer.sprite = StagesSprites[4];
+                    break;
+            }
+        }
     }
 
 
