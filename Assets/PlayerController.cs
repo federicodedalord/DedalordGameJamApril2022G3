@@ -81,7 +81,10 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("HitDetector"))
         {
-            GameManager.Instance.ReloadScene();
+            if (GameManager.Instance.currentStage <= 4)
+            {
+                GameManager.Instance.ReloadScene();
+            }
         }
     }
 

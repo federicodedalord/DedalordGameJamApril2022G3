@@ -30,13 +30,16 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        stage = Stages.Stage1;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
         if (playerController == null)
         {
             playerController = FindObjectOfType<PlayerController>();
         }
-
-        stage = Stages.Stage1;
-        DontDestroyOnLoad(gameObject);
         var spriteRenderer = playerController.GetComponent<SpriteRenderer>();
 
         switch (currentStage)
@@ -59,14 +62,7 @@ public class GameManager : MonoBehaviour
             default:
                 break;
         }
-    }
-
-    private void Update()
-    {
-        if (playerController == null)
-        {
-            playerController = FindObjectOfType<PlayerController>();
-        }
+        playerController.GetComponent<BoxCollider2D>().size = spriteRenderer.bounds.size;
 
         switch (stage)
         {
@@ -92,6 +88,7 @@ public class GameManager : MonoBehaviour
 
     public void ReloadScene() { 
         SceneManager.LoadScene(System.Enum.GetName(typeof(Stages), stage));
+        SustainSlider.value = 0;
     }
 
     public void Stage1()
@@ -136,6 +133,7 @@ public class GameManager : MonoBehaviour
                     spriteRenderer.sprite = StagesSprites[4];
                     break;
             }
+            playerController.GetComponent<BoxCollider2D>().size = spriteRenderer.bounds.size;
         }
     }
 

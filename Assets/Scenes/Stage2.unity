@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3785487900501086957, guid: 201fb400830b192479b2a16d2832db71, type: 3}
+      propertyPath: m_MaxValue
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3785487900790835420, guid: 201fb400830b192479b2a16d2832db71, type: 3}
       propertyPath: m_Name
       value: GameController(Singleton)
@@ -142,6 +146,30 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3785487900790835421, guid: 201fb400830b192479b2a16d2832db71, type: 3}
+      propertyPath: StagesSprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785487900790835421, guid: 201fb400830b192479b2a16d2832db71, type: 3}
+      propertyPath: StagesSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ac0131f65255be4e908732fc5fe7d9c, type: 3}
+    - target: {fileID: 3785487900790835421, guid: 201fb400830b192479b2a16d2832db71, type: 3}
+      propertyPath: StagesSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 913b2a355814db0439890ce002936c6a, type: 3}
+    - target: {fileID: 3785487900790835421, guid: 201fb400830b192479b2a16d2832db71, type: 3}
+      propertyPath: StagesSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f3e27e0792b0ee41831363664fcd533, type: 3}
+    - target: {fileID: 3785487900790835421, guid: 201fb400830b192479b2a16d2832db71, type: 3}
+      propertyPath: StagesSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: e6e1aa0fa1e2709419fede9735b0d1ca, type: 3}
+    - target: {fileID: 3785487900790835421, guid: 201fb400830b192479b2a16d2832db71, type: 3}
+      propertyPath: StagesSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: a9a7e5ad3bebed6408a9114c99fcfc00, type: 3}
     - target: {fileID: 3785487900790835422, guid: 201fb400830b192479b2a16d2832db71, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -472,11 +500,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2601836452151772378, guid: 1c43924c8e810fa43af659557bd86ff3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.89
+      value: -4.194
       objectReference: {fileID: 0}
     - target: {fileID: 2601836452151772378, guid: 1c43924c8e810fa43af659557bd86ff3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.54
+      value: -2.054
       objectReference: {fileID: 0}
     - target: {fileID: 2601836452151772378, guid: 1c43924c8e810fa43af659557bd86ff3, type: 3}
       propertyPath: m_LocalPosition.z
