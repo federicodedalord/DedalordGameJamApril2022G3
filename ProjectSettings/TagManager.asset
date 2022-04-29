@@ -9,6 +9,7 @@ TagManager:
   - PowerUp
   - ParedIzquierda
   - ParedDerecha
+  - Background
   layers:
   - Default
   - TransparentFX

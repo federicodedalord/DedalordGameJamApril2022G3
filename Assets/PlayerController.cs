@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     private float _sustainProgress;
 
+    public bool CanPlay = true;
+
     public float SustainProgress
     {
         get { return _sustainProgress; }
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     public MovementType Movement { get => movement; set => movement = value; }
 
+
     private void OnGUI()
     {
         GUI.Label(new Rect(0, 20, 200, 40), "CanJump: " + CanJump);
@@ -47,8 +50,6 @@ public class PlayerController : MonoBehaviour
         GUI.Label(new Rect(0, 100, 200, 40), "OnSpace: " + OnSpace);
         GUI.Label(new Rect(0, 120, 200, 40), "StopJump: " + StopJump);
     }
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -113,6 +114,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!CanPlay)
+        {
+            _rb2d.velocity = Vector2.zero;
+            return;
+        }
+
         switch (Movement)
         {
             case MovementType.Falling:
@@ -172,8 +179,8 @@ public class PlayerController : MonoBehaviour
     private void FallingMovement()
     {
         _rb2d.isKinematic = true;
-
         _xInput = Input.GetAxis("Horizontal");
+
 
         if (TouchingLeftWall && _xInput < 0)
         {
