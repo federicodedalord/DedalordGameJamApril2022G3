@@ -400,7 +400,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.7
+  orthographic size: 2.2141378
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -568,7 +568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716209174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.712, y: -0.983, z: 0}
+  m_LocalPosition: {x: 3.14, y: -1.14, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -726,7 +726,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927350522}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.510349, y: -4.318949, z: -0.4279158}
+  m_LocalPosition: {x: -2.081, y: -1.747, z: -0.4279158}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -838,9 +838,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529c73d000311c94abf7951256fb46f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: 0
   _rb2d: {fileID: 1030695441}
   _jumpForce: 3
-  _extraJump: 0.5
+  _horizontalSpeed: 3
+  _extraJumpDistance: 1
 --- !u!212 &1030695444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -901,7 +903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030695440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7, y: -1.719, z: 0}
+  m_LocalPosition: {x: -1.245, y: 0.683, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

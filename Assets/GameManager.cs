@@ -21,4 +21,9 @@ public class GameManager : MonoBehaviour
 
     public PlayerController playerController;
     public Slider SustainSlider;
+
+    private void Awake()
+    {
+        playerController.Movement = PlayerController.MovementType.Falling;
+    }
 }
