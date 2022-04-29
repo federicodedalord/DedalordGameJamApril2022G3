@@ -5,31 +5,67 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rb2d;
-    private bool _jumping = false;
-    private RaycastHit2D rayHit;
 
-    private bool PressingSpace;
+    private bool OnSpace;
+    private bool SpaceUp;
+    private bool SpaceWithGround;
+    private bool IsGrounded;
+    private bool CanJump;
+
+    [SerializeField] private float _jumpForce;
+    [SerializeField] private float _extraJump;
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(0, 0, 200, 20), "Jumping: " + _jumping.ToString());
-        GUI.Label(new Rect(0, 20, 200, 100), "PressingSpace: " + PressingSpace);
+        GUI.Label(new Rect(0, 0, 200, 40), "OnSpace: " + OnSpace);
+        GUI.Label(new Rect(0, 20, 200, 40), "CanJump: " + CanJump);
     }
+
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            if (IsGrounded == false)
+            {
+                IsGrounded = true;
+            }
+        }
+    }
+
 
     private void Update()
     {
-        PressingSpace = Input.GetKey(KeyCode.Space);
+        // Debug
+        Debug.DrawRay(transform.position, Vector2.down * _extraJump, Color.magenta);
 
-        Debug.DrawRay(transform.position, Vector2.down * 0.4f, Color.magenta);
+        // Conditionals
+        OnSpace = Input.GetKey(KeyCode.Space);
+        SpaceUp = Input.GetKeyUp(KeyCode.Space);
+        CanJump = Physics2D.Raycast(transform.position, Vector2.down, _extraJump) && SpaceWithGround;
 
-        RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Vector2.down, 0.4f);
-        if (!PressingSpace && rayHit.collider != null)
+        // Jump
+        if (OnSpace)
         {
-            _jumping = false;
+            if (IsGrounded)
+            {
+                SpaceWithGround = true;
+                IsGrounded = false;
+            }
+            if (CanJump)
+            {
+                _rb2d.velocity = Vector2.up * _jumpForce;
+            }
         }
-        else if (PressingSpace && !_jumping)
+        else
         {
-            _rb2d.velocity = new Vector2(0, 6f);
+            CanJump = false; 
+        }
+
+        if (SpaceWithGround & SpaceUp)
+        {
+            SpaceWithGround = false;
         }
     }
 }
