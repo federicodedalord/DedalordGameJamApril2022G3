@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null;
+    private static GameManager instance = null;
 
     public static GameManager Instance
     {
@@ -12,12 +13,12 @@ public class GameManager : MonoBehaviour
         {
             if (instance == null)
             {
-                instance = new GameManager();
+                instance = FindObjectOfType<GameManager>();
             }
             return instance;
         }
     }
 
     public PlayerController playerController;
-
+    public Slider SustainSlider;
 }

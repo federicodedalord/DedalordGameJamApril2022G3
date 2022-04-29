@@ -15,6 +15,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _extraJump;
 
+    private float _sustainProgress;
+
+    public float SustainProgress
+    {
+        get { return _sustainProgress; }
+        set
+        {
+            _sustainProgress = value;
+            GameManager.Instance.SustainSlider.value = _sustainProgress;
+        }
+    }
+
     private void OnGUI()
     {
         GUI.Label(new Rect(0, 0, 200, 40), "OnSpace: " + OnSpace);
@@ -31,6 +43,17 @@ public class PlayerController : MonoBehaviour
             {
                 IsGrounded = true;
             }
+        }
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("PowerUp"))
+        {
+            SustainProgress += collision.gameObject.GetComponent<PowerUp>().Sustain;
+            Destroy(collision.gameObject);
         }
     }
 
