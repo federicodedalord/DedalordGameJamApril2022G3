@@ -7,10 +7,11 @@ public class Spawner : MonoBehaviour
     public GameObject obj;
     public Transform ObjFather;
     
-    
+    [Header("Spawn Time")]
     public float SpawnTimeMax = 10.0f;
     public float SpawnTimeMin = 5.0f;
-
+    
+    [Header("Spawn Position")]
     public Vector2 maxSpawnPos = Vector2.zero;
     public Vector2 minSpawnPos = Vector2.zero;
 
