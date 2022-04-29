@@ -655,11 +655,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529c73d000311c94abf7951256fb46f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 0
   _rb2d: {fileID: 1030695441}
   _jumpForce: 0
-  _horizontalSpeed: 10
-  _extraJumpDistance: 0
+  _extraJump: 0
 --- !u!212 &1030695444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -835,7 +833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398436471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2045072, y: 10.592215, z: 0.124364346}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

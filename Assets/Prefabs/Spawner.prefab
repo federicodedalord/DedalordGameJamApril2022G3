@@ -48,3 +48,5 @@ MonoBehaviour:
   ObjFather: {fileID: 0}
   SpawnTimeMax: 10
   SpawnTimeMin: 5
+  maxSpawnPos: {x: -10, y: 0}
+  minSpawnPos: {x: 10, y: 0}
