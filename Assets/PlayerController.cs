@@ -142,7 +142,8 @@ public class PlayerController : MonoBehaviour
         // Conditionals
         OnSpace = Input.GetKey(KeyCode.Space);
         SpaceUp = Input.GetKeyUp(KeyCode.Space);
-        CanJump = Physics2D.Raycast(transform.position, Vector2.down, _extraJumpDistance) && SpaceWithGround;
+        var rayHit = Physics2D.Raycast(transform.position, Vector2.down, _extraJumpDistance);
+        CanJump = rayHit.collider ? rayHit.collider.tag == "Floor" : false && SpaceWithGround;
 
         // Jump
         if (OnSpace)

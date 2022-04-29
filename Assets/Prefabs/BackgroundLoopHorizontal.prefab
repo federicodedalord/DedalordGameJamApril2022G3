@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5697036134140210523}
   - component: {fileID: -7103836329979774528}
   - component: {fileID: -8181048341087634682}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackgroundLoopHorizontal
   m_TagString: Background
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 857516091410165621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.440053, y: 0.89878094, z: 0}
-  m_LocalScale: {x: 15, y: 14, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 0.13333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 2
-  direction: {x: 0, y: 1}
+  direction: {x: -1, y: 0}
   loopObjRef: {fileID: 0}
 --- !u!114 &5697036134140210523
 MonoBehaviour:
@@ -148,7 +148,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
