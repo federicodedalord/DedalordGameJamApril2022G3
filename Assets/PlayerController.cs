@@ -78,6 +78,11 @@ public class PlayerController : MonoBehaviour
         {
             TouchingRightWall = true;
         }
+
+        if (collision.gameObject.CompareTag("HitDetector"))
+        {
+            
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -163,7 +168,6 @@ public class PlayerController : MonoBehaviour
             if (CanJump && !StopJump)
             {
                 _rb2d.velocity = Vector2.up * _jumpForce;
-
             }
         }
         else

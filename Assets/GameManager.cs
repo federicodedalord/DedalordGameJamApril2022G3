@@ -6,22 +6,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance = null;
+    public static GameManager Instance = null;
 
     public enum Stages { Stage1, Stage2, Stage3, Stage4, Stage5 }
     public Stages stage;
-
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<GameManager>();
-            }
-            return instance;
-        }
-    }
 
     public PlayerController playerController;
     public Slider SustainSlider;
@@ -29,6 +17,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = FindObjectOfType<GameManager>();
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (playerController == null)
         {
             playerController = FindObjectOfType<PlayerController>();
@@ -71,7 +69,6 @@ public class GameManager : MonoBehaviour
     {
         if (SustainSlider.value >= SustainSlider.maxValue)
         {
-            playerController.CanPlay = false;
             stage = Stages.Stage2;
             SceneManager.LoadScene("Stage2");
         }
@@ -80,7 +77,6 @@ public class GameManager : MonoBehaviour
     public void Stage2()
     {
         playerController.Movement = PlayerController.MovementType.Sliding;
-        playerController.CanPlay = false;
         stage = Stages.Stage2;
     }
 
